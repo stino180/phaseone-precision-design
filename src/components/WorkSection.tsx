@@ -12,39 +12,45 @@ type Category = "all" | "websites" | "apps" | "logos";
 const projects = [
   {
     category: "websites" as const,
-    title: "Decal Holdings",
-    description: "Corporate website for a real estate investment firm",
+    title: "Mozze",
+    description: "Music streaming platform using a currency called Notes for artist-fan transactions",
     image: workWebsite1,
   },
   {
-    category: "apps" as const,
-    title: "FitPulse",
-    description: "Fitness tracking app with real-time analytics",
-    image: workApp1,
-  },
-  {
-    category: "logos" as const,
-    title: "AR Monogram",
-    description: "Geometric lettermark for an architecture studio",
-    image: workLogo1,
-  },
-  {
     category: "websites" as const,
-    title: "iFashion",
-    description: "E-commerce platform for a luxury fashion brand",
+    title: "zMove",
+    description: "Sports clip platform for posting, viewing, and livestreaming grassroots sports events",
     image: workWebsite2,
   },
   {
     category: "apps" as const,
-    title: "VaultPay",
-    description: "Mobile banking app with card management",
+    title: "Quotient",
+    description: "Chart-anything app that lets users compare and overlay any two assets together",
+    image: workApp1,
+  },
+  {
+    category: "websites" as const,
+    title: "Bitcoin Clock",
+    description: "Live dashboard of Bitcoin stats — halvings, ownership metrics, and network data",
+    image: workLogo1,
+  },
+  {
+    category: "websites" as const,
+    title: "EOLS Inc.",
+    description: "CDL training platform with live Zoom classes, practice tests, and study guides",
+    image: workLogo2,
+  },
+  {
+    category: "websites" as const,
+    title: "Tabby City",
+    description: "Preppy college cat-themed apparel site featuring cats in Ivy League merch",
     image: workApp2,
   },
   {
-    category: "logos" as const,
-    title: "Brand Identity Collection",
-    description: "Suite of marks for lifestyle & design brands",
-    image: workLogo2,
+    category: "apps" as const,
+    title: "Stacq",
+    description: "Decentralized automated DCA app for scheduling buys into crypto and stocks",
+    image: workWebsite1,
   },
 ];
 
