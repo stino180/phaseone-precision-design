@@ -1,56 +1,50 @@
 import { useState } from "react";
 
-import workWebsite1 from "@/assets/work-website-1.jpg";
-import workWebsite2 from "@/assets/work-website-2.jpg";
-import workApp1 from "@/assets/work-app-1.jpg";
-import workApp2 from "@/assets/work-app-2.jpg";
-import workLogo1 from "@/assets/work-logo-1.jpg";
-import workLogo2 from "@/assets/work-logo-2.jpg";
+import workMozze from "@/assets/work-mozze.png";
+import workZmove from "@/assets/work-zmove.png";
+import workQuotient from "@/assets/work-quotient.png";
+import workBitcoinClock from "@/assets/work-bitcoin-clock.png";
+import workEols from "@/assets/work-eols.png";
+import workStacq from "@/assets/work-stacq.png";
 
-type Category = "all" | "websites" | "apps" | "logos";
+type Category = "all" | "websites" | "apps";
 
 const projects = [
   {
     category: "websites" as const,
     title: "Mozze",
     description: "Music streaming platform using a currency called Notes for artist-fan transactions",
-    image: workWebsite1,
+    image: workMozze,
   },
   {
     category: "websites" as const,
     title: "zMove",
     description: "Sports clip platform for posting, viewing, and livestreaming grassroots sports events",
-    image: workWebsite2,
+    image: workZmove,
   },
   {
     category: "apps" as const,
     title: "Quotient",
     description: "Chart-anything app that lets users compare and overlay any two assets together",
-    image: workApp1,
+    image: workQuotient,
   },
   {
     category: "websites" as const,
     title: "Bitcoin Clock",
     description: "Live dashboard of Bitcoin stats — halvings, ownership metrics, and network data",
-    image: workLogo1,
+    image: workBitcoinClock,
   },
   {
     category: "websites" as const,
     title: "EOLS Inc.",
     description: "CDL training platform with live Zoom classes, practice tests, and study guides",
-    image: workLogo2,
-  },
-  {
-    category: "websites" as const,
-    title: "Tabby City",
-    description: "Preppy college cat-themed apparel site featuring cats in Ivy League merch",
-    image: workApp2,
+    image: workEols,
   },
   {
     category: "apps" as const,
     title: "Stacq",
     description: "Decentralized automated DCA app for scheduling buys into crypto and stocks",
-    image: workWebsite1,
+    image: workStacq,
   },
 ];
 
@@ -58,7 +52,6 @@ const filters: { label: string; value: Category }[] = [
   { label: "All", value: "all" },
   { label: "Websites", value: "websites" },
   { label: "Apps", value: "apps" },
-  { label: "Logos", value: "logos" },
 ];
 
 const WorkSection = () => {
