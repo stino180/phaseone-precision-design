@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Phase One. All rights reserved.
+            © {new Date().getFullYear()} Baseline Studio. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Precision in every pixel.

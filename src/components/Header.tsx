@@ -10,7 +10,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-foreground uppercase">
-          Phase<span className="font-light ml-1">One</span>
+          Baseline<span className="font-light ml-1">Studio</span>
         </a>
 
         {/* Desktop nav */}
