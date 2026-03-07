@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <a href="#" className="text-xl font-bold tracking-tighter text-foreground uppercase">
-              Phase<span className="font-light ml-1">One</span>
+              Baseline<span className="font-light ml-1">Studio</span>
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               Digital consultancy for the detail-obsessed.
