@@ -53,8 +53,10 @@ const LogoCarousel = () => {
   const scroll = (direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
+    setIsPaused(true);
     const amount = 200;
     el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
+    setTimeout(() => setIsPaused(false), 600);
   };
 
   const allLogos = [...logos, ...logos];
