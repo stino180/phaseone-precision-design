@@ -1,15 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+import logoBasalt from "@/assets/logo-basalt.png";
+import logoDefi from "@/assets/logo-defischoolhouse.jpeg";
+import logoSteady from "@/assets/logo-steady.png";
+import logoAsetra from "@/assets/logo-asetra.png";
+import logoZ from "@/assets/logo-z.png";
+import logoStino from "@/assets/logo-stino.png";
+import logoEols from "@/assets/logo-eols.png";
+import logoExobloc from "@/assets/logo-exobloc.png";
+import logoMozze from "@/assets/logo-mozze.png";
+import logoTabbyCity from "@/assets/logo-tabbycity.png";
+
 const logos = [
-  { name: "Acme Corp" },
-  { name: "Globex" },
-  { name: "Initech" },
-  { name: "Umbrella" },
-  { name: "Stark Industries" },
-  { name: "Wayne Enterprises" },
-  { name: "Cyberdyne" },
-  { name: "Oscorp" },
+  { name: "Basalt", src: logoBasalt },
+  { name: "Defi Schoolhouse", src: logoDefi },
+  { name: "Steady", src: logoSteady },
+  { name: "Asetra", src: logoAsetra },
+  { name: "Z", src: logoZ },
+  { name: "Stino", src: logoStino },
+  { name: "EOLS Inc.", src: logoEols },
+  { name: "Exobloc", src: logoExobloc },
+  { name: "Mozze", src: logoMozze },
+  { name: "Tabby City", src: logoTabbyCity },
 ];
 
 const LogoCarousel = () => {
@@ -26,7 +39,6 @@ const LogoCarousel = () => {
     const step = () => {
       if (!isPaused && el) {
         el.scrollLeft += speed;
-        // Loop: when we've scrolled past half (the duplicated set), reset
         if (el.scrollLeft >= el.scrollWidth / 2) {
           el.scrollLeft = 0;
         }
@@ -45,7 +57,6 @@ const LogoCarousel = () => {
     el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
   };
 
-  // Duplicate logos for seamless loop
   const allLogos = [...logos, ...logos];
 
   return (
@@ -73,8 +84,12 @@ const LogoCarousel = () => {
             <div className="flex gap-12 items-center w-max">
               {allLogos.map((logo, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 min-w-[120px]">
-                  <div className="h-16 w-16 rounded-lg bg-muted flex items-center justify-center text-muted-foreground text-xs font-bold uppercase tracking-wider">
-                    {logo.name.charAt(0)}
+                  <div className="h-20 w-20 rounded-lg flex items-center justify-center overflow-hidden">
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <span className="text-xs text-muted-foreground font-medium tracking-wide">
                     {logo.name}
