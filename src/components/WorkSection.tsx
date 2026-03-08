@@ -24,7 +24,7 @@ const projects = [
   },
   {
     category: "apps" as const,
-    title: "Quotient",
+    title: "DuoChart",
     description: "Chart-anything app that lets users compare and overlay any two assets together",
     image: workQuotient,
   },
