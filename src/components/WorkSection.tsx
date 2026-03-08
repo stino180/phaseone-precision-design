@@ -102,8 +102,11 @@ const WorkSection = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filtered.map((project) => (
-            <div
+            <a
               key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden bg-background aspect-[4/3]">
@@ -126,7 +129,7 @@ const WorkSection = () => {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
