@@ -15,36 +15,42 @@ const projects = [
     title: "Mozze",
     description: "Music streaming platform using a currency called Notes for artist-fan transactions",
     image: workMozze,
+    url: "https://mozze.xyz",
   },
   {
     category: "websites" as const,
     title: "zMove",
     description: "Sports clip platform for posting, viewing, and livestreaming grassroots sports events",
     image: workZmove,
+    url: "https://zmove.xyz",
   },
   {
     category: "apps" as const,
     title: "DuoChart",
     description: "Chart-anything app that lets users compare and overlay any two assets together",
     image: workQuotient,
+    url: "https://duochart.pages.dev/",
   },
   {
     category: "websites" as const,
     title: "Bitcoin Clock",
     description: "Live dashboard of Bitcoin stats — halvings, ownership metrics, and network data",
     image: workBitcoinClock,
+    url: "https://bitcoin-clock-95y.pages.dev/",
   },
   {
     category: "websites" as const,
     title: "EOLS Inc.",
     description: "CDL training platform with live Zoom classes, practice tests, and study guides",
     image: workEols,
+    url: "https://eolsinc.org",
   },
   {
     category: "apps" as const,
     title: "Stacq",
     description: "Decentralized automated DCA app for scheduling buys into crypto and stocks",
     image: workStacq,
+    url: "https://stacq.xyz",
   },
 ];
 
