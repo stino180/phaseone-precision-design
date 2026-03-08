@@ -52,7 +52,7 @@ const LogoCarousel = () => {
     <section className="py-16 md:py-24 bg-surface border-t border-border">
       <div className="container">
         <p className="text-center text-sm font-medium text-muted-foreground tracking-widest uppercase mb-10">
-          Trusted By
+          Logos
         </p>
 
         <div className="relative flex items-center gap-4">
