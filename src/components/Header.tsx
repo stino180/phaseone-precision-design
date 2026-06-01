@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoBaseline from "@/assets/logo-baseline.png";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,8 +10,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-foreground uppercase">
-          Baseline<span className="font-light ml-1">Studio</span>
+        <a href="#" className="flex items-center gap-2" aria-label="Baseline Studios home">
+          <img src={logoBaseline} alt="Baseline Studios" className="h-10 md:h-12 w-auto" />
         </a>
 
         {/* Desktop nav */}
