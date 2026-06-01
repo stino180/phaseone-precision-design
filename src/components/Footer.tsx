@@ -1,11 +1,13 @@
+import logoBaseline from "@/assets/logo-baseline.png";
+
 const Footer = () => {
   return (
     <footer className="py-12 md:py-16 bg-background border-t border-border">
       <div className="container">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <a href="#" className="text-xl font-bold tracking-tighter text-foreground uppercase">
-              Baseline<span className="font-light ml-1">Studio</span>
+            <a href="#" className="inline-flex items-center" aria-label="Baseline Studios home">
+              <img src={logoBaseline} alt="Baseline Studios" className="h-14 w-auto" />
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               Digital consultancy for the detail-obsessed.
