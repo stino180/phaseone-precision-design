@@ -11,7 +11,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="flex items-center gap-2" aria-label="Baseline Studios home">
-          <img src={logoBaseline} alt="Baseline Studios" className="h-10 md:h-12 w-auto" />
+          <img src={logoBaseline} alt="Baseline Studios" className="h-14 md:h-20 w-auto" />
         </a>
 
         {/* Desktop nav */}

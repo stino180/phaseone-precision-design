@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <a href="#" className="inline-flex items-center" aria-label="Baseline Studios home">
-              <img src={logoBaseline} alt="Baseline Studios" className="h-14 w-auto" />
+              <img src={logoBaseline} alt="Baseline Studios" className="h-20 w-auto" />
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               Digital consultancy for the detail-obsessed.
