@@ -1,0 +1,14 @@
+# Baseline Studio
+
+> Premium digital consultancy specializing in web design, mobile applications, and brand strategy.
+
+Baseline Studio crafts digital experiences with the rigor of Swiss design and the edge of modern technology. Services include web design and development, mobile applications, and brand strategy.
+
+## Pages
+
+- [Home](/): Overview of services, work, process, and how to book a consultation.
+
+## Contact
+
+- Email: jstrongmgmt@gmail.com
+- Phone: +1 (773) 234-7823
