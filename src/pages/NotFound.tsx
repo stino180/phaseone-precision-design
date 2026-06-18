@@ -12,12 +12,12 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page not found — Baseline Studio</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Head back to the Baseline Studio home page." />
+        <title>Page not found — Inpoint Studio</title>
+        <meta name="description" content="The page you're looking for doesn't exist. Head back to the Inpoint Studio home page." />
         <meta name="robots" content="noindex" />
-        <meta property="og:title" content="Page not found — Baseline Studio" />
+        <meta property="og:title" content="Page not found — Inpoint Studio" />
         <meta property="og:description" content="The page you're looking for doesn't exist." />
-        <meta name="twitter:title" content="Page not found — Baseline Studio" />
+        <meta name="twitter:title" content="Page not found — Inpoint Studio" />
         <meta name="twitter:description" content="The page you're looking for doesn't exist." />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-muted">

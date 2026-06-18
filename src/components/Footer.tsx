@@ -1,4 +1,4 @@
-import logoBaseline from "@/assets/logo-baseline.png";
+import logoInpoint from "@/assets/logo-inpoint.png";
 
 const Footer = () => {
   return (
@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <a href="#" className="inline-flex items-center" aria-label="Baseline Studios home">
-              <img src={logoBaseline} alt="Baseline Studios" className="h-20 w-auto" />
+            <a href="#" className="inline-flex items-center" aria-label="Inpoint Studio home">
+              <img src={logoInpoint} alt="Inpoint Studio" className="h-20 w-auto" />
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               Digital consultancy for the detail-obsessed.
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Baseline Studio. All rights reserved.
+            © {new Date().getFullYear()} Inpoint Studio. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Precision in every pixel.

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://baselinestudio.lovable.app/sitemap.xml
+Sitemap: https://inpointstudio.lovable.app/sitemap.xml
