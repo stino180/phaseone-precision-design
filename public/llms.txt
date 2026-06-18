@@ -1,8 +1,8 @@
-# Baseline Studio
+# Inpoint Studio
 
 > Premium digital consultancy specializing in web design, mobile applications, and brand strategy.
 
-Baseline Studio crafts digital experiences with the rigor of Swiss design and the edge of modern technology. Services include web design and development, mobile applications, and brand strategy.
+Inpoint Studio crafts digital experiences with the rigor of Swiss design and the edge of modern technology. Services include web design and development, mobile applications, and brand strategy.
 
 ## Pages
 
