@@ -1,4 +1,4 @@
-import { Globe, Smartphone, PenTool } from "lucide-react";
+import { Globe, Smartphone, PenTool, Clapperboard } from "lucide-react";
 
 const services = [
   {
@@ -19,6 +19,12 @@ const services = [
     description:
       "Logos, identity systems, and visual assets that communicate authority. Strategic design rooted in clarity and purpose.",
   },
+  {
+    icon: Clapperboard,
+    title: "Video & Motion",
+    description:
+      "Brand spots, product films, and motion graphics. Launch your site and the film that sells it from one team.",
+  },
 ];
 
 const ServicesSection = () => {
@@ -37,7 +43,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Three-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-12 lg:gap-10">
           {services.map((service) => (
             <div key={service.title} className="group">
               <service.icon

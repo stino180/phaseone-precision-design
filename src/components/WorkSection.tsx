@@ -7,58 +7,88 @@ import workBitcoinClock from "@/assets/work-bitcoin-clock.png";
 import workEols from "@/assets/work-eols.png";
 import workStacq from "@/assets/work-stacq.png";
 
-type Category = "all" | "websites" | "apps";
+type Category = "all" | "websites" | "apps" | "video";
+type Origin = "in-house" | "client";
 
-const projects = [
+type Project = {
+  category: Exclude<Category, "all">;
+  origin: Origin;
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+};
+
+const projects: Project[] = [
   {
-    category: "websites" as const,
+    category: "websites",
+    origin: "in-house",
     title: "Mozze",
     description: "Music streaming platform using a currency called Notes for artist-fan transactions",
     image: workMozze,
     url: "https://mozze.xyz",
   },
   {
-    category: "websites" as const,
+    category: "websites",
+    origin: "in-house",
     title: "zMove",
     description: "Sports clip platform for posting, viewing, and livestreaming grassroots sports events",
     image: workZmove,
     url: "https://zmove.xyz",
   },
   {
-    category: "apps" as const,
+    category: "apps",
+    origin: "in-house",
     title: "DuoChart",
     description: "Chart-anything app that lets users compare and overlay any two assets together",
     image: workQuotient,
     url: "https://duochart.pages.dev/",
   },
   {
-    category: "websites" as const,
+    category: "websites",
+    origin: "in-house",
     title: "Bitcoin Clock",
     description: "Live dashboard of Bitcoin stats — halvings, ownership metrics, and network data",
     image: workBitcoinClock,
     url: "https://bitcoin-clock-95y.pages.dev/",
   },
   {
-    category: "websites" as const,
+    category: "websites",
+    origin: "client",
     title: "EOLS Inc.",
     description: "CDL training platform with live Zoom classes, practice tests, and study guides",
     image: workEols,
     url: "https://eolsinc.org",
   },
   {
-    category: "apps" as const,
+    category: "apps",
+    origin: "in-house",
     title: "Stacq",
     description: "Decentralized automated DCA app for scheduling buys into crypto and stocks",
     image: workStacq,
     url: "https://stacq.xyz",
   },
+  // Commercial video work goes here. Personal / music reels belong on the hub site,
+  // not in this portfolio — this grid is for work a client could buy.
+  // Add entries as: { category: "video", origin: "client", title, description, image, url }
 ];
 
-const filters: { label: string; value: Category }[] = [
+const allFilters: { label: string; value: Category }[] = [
   { label: "All", value: "all" },
   { label: "Websites", value: "websites" },
   { label: "Apps", value: "apps" },
+  { label: "Video", value: "video" },
 ];
+
+// Hide a discipline filter until there is at least one project in it.
+const filters = allFilters.filter(
+  (f) => f.value === "all" || projects.some((p) => p.category === f.value)
+);
+
+const originLabel: Record<Origin, string> = {
+  "in-house": "In-House Product",
+  client: "Client Work",
+};
 
 const WorkSection = () => {
   const [active, setActive] = useState<Category>("all");
@@ -80,6 +110,10 @@ const WorkSection = () => {
             Portfolio
           </h2>
           <div className="mt-4 w-12 h-px bg-primary" />
+          <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed text-[15px]">
+            We build and ship our own products alongside client engagements. The
+            same team that carried these to production builds your project.
+          </p>
         </div>
 
         {/* Filters */}
@@ -117,6 +151,9 @@ const WorkSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300" />
+                <span className="absolute top-3 left-3 px-2 py-1 bg-background/90 backdrop-blur-sm text-[10px] font-medium tracking-[0.15em] uppercase text-foreground">
+                  {originLabel[project.origin]}
+                </span>
               </div>
               <div className="mt-4">
                 <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
