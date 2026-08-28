@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { projects, type ProjectDiscipline } from "@/data/projects";
+
 import workMozze from "@/assets/work-mozze.png";
 import workZmove from "@/assets/work-zmove.png";
 import workQuotient from "@/assets/work-quotient.png";
@@ -7,96 +9,50 @@ import workBitcoinClock from "@/assets/work-bitcoin-clock.png";
 import workEols from "@/assets/work-eols.png";
 import workStacq from "@/assets/work-stacq.png";
 
-type Category = "all" | "websites" | "apps" | "video";
-type Origin = "in-house" | "client";
+type Filter = "all" | ProjectDiscipline | "video";
 
-type Project = {
-  category: Exclude<Category, "all">;
-  origin: Origin;
-  title: string;
-  description: string;
-  image: string;
-  url: string;
+/**
+ * Screenshots are this site's own, so they're keyed by slug here rather than
+ * carried in the shared catalogue. A project with no artwork still renders.
+ */
+const artwork: Record<string, string> = {
+  mozze: workMozze,
+  zmove: workZmove,
+  duochart: workQuotient,
+  "bitcoin-clock": workBitcoinClock,
+  eols: workEols,
+  stacq: workStacq,
 };
 
-const projects: Project[] = [
-  {
-    category: "websites",
-    origin: "in-house",
-    title: "Mozze",
-    description: "Music streaming platform using a currency called Notes for artist-fan transactions",
-    image: workMozze,
-    url: "https://mozze.xyz",
-  },
-  {
-    category: "websites",
-    origin: "in-house",
-    title: "zMove",
-    description: "Sports clip platform for posting, viewing, and livestreaming grassroots sports events",
-    image: workZmove,
-    url: "https://zmove.xyz",
-  },
-  {
-    category: "apps",
-    origin: "in-house",
-    title: "DuoChart",
-    description: "Chart-anything app that lets users compare and overlay any two assets together",
-    image: workQuotient,
-    url: "https://duochart.pages.dev/",
-  },
-  {
-    category: "websites",
-    origin: "in-house",
-    title: "Bitcoin Clock",
-    description: "Live dashboard of Bitcoin stats — halvings, ownership metrics, and network data",
-    image: workBitcoinClock,
-    url: "https://bitcoin-clock-95y.pages.dev/",
-  },
-  {
-    category: "websites",
-    origin: "client",
-    title: "EOLS Inc.",
-    description: "CDL training platform with live Zoom classes, practice tests, and study guides",
-    image: workEols,
-    url: "https://eolsinc.org",
-  },
-  {
-    category: "apps",
-    origin: "in-house",
-    title: "Stacq",
-    description: "Decentralized automated DCA app for scheduling buys into crypto and stocks",
-    image: workStacq,
-    url: "https://stacq.xyz",
-  },
-  // Commercial video work goes here. Personal / music reels belong on the hub site,
-  // not in this portfolio — this grid is for work a client could buy.
-  // Add entries as: { category: "video", origin: "client", title, description, image, url }
-];
-
-const allFilters: { label: string; value: Category }[] = [
+const allFilters: { label: string; value: Filter }[] = [
   { label: "All", value: "all" },
-  { label: "Websites", value: "websites" },
-  { label: "Apps", value: "apps" },
+  { label: "Websites", value: "website" },
+  { label: "Apps", value: "app" },
   { label: "Video", value: "video" },
 ];
 
 // Hide a discipline filter until there is at least one project in it.
 const filters = allFilters.filter(
-  (f) => f.value === "all" || projects.some((p) => p.category === f.value)
+  (f) => f.value === "all" || projects.some((p) => p.discipline === f.value)
 );
 
-const originLabel: Record<Origin, string> = {
+const originLabel = {
   "in-house": "In-House Product",
   client: "Client Work",
+} as const;
+
+const disciplineLabel: Record<ProjectDiscipline, string> = {
+  website: "Websites",
+  app: "Apps",
 };
 
 const WorkSection = () => {
-  const [active, setActive] = useState<Category>("all");
+  const [active, setActive] = useState<Filter>("all");
 
   const filtered =
     active === "all"
       ? projects
-      : projects.filter((p) => p.category === active);
+      : projects.filter((p) => p.discipline === active);
 
   return (
     <section id="work" className="py-24 md:py-32 bg-surface">
@@ -137,19 +93,21 @@ const WorkSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filtered.map((project) => (
             <a
-              key={project.title}
+              key={project.slug}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden bg-background aspect-[4/3]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+                {artwork[project.slug] && (
+                  <img
+                    src={artwork[project.slug]}
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300" />
                 <span className="absolute top-3 left-3 px-2 py-1 bg-background/90 backdrop-blur-sm text-[10px] font-medium tracking-[0.15em] uppercase text-foreground">
                   {originLabel[project.origin]}
@@ -157,13 +115,13 @@ const WorkSection = () => {
               </div>
               <div className="mt-4">
                 <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">
-                  {project.category}
+                  {disciplineLabel[project.discipline]}
                 </span>
                 <h3 className="mt-1 text-lg font-semibold text-foreground tracking-tight">
-                  {project.title}
+                  {project.name}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {project.description}
+                  {project.blurb}
                 </p>
               </div>
             </a>
