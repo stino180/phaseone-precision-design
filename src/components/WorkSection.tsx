@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import { projects, type ProjectDiscipline } from "@/data/projects";
 
-import workMozze from "@/assets/work-mozze.png";
-import workZmove from "@/assets/work-zmove.png";
-import workQuotient from "@/assets/work-quotient.png";
-import workBitcoinClock from "@/assets/work-bitcoin-clock.png";
-import workEols from "@/assets/work-eols.png";
-import workStacq from "@/assets/work-stacq.png";
+import workMozze from "@/assets/work-mozze.webp";
+import workZmove from "@/assets/work-zmove.webp";
+import workQuotient from "@/assets/work-quotient.webp";
+import workBitcoinClock from "@/assets/work-bitcoin-clock.webp";
+import workEols from "@/assets/work-eols.webp";
+import workStacq from "@/assets/work-stacq.webp";
 
 type Filter = "all" | ProjectDiscipline | "video";
 

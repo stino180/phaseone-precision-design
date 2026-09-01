@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import logoBasalt from "@/assets/logo-basalt.png";
-import logoDefi from "@/assets/logo-defischoolhouse.jpeg";
-import logoSteady from "@/assets/logo-steady.png";
-import logoAsetra from "@/assets/logo-asetra.png";
-import logoZ from "@/assets/logo-z.png";
-import logoStino from "@/assets/logo-stino.png";
-import logoEols from "@/assets/logo-eols.png";
-import logoExobloc from "@/assets/logo-exobloc.png";
-import logoMozze from "@/assets/logo-mozze.png";
-import logoTabbyCity from "@/assets/logo-tabbycity.png";
+import logoBasalt from "@/assets/logo-basalt.webp";
+import logoDefi from "@/assets/logo-defischoolhouse.webp";
+import logoSteady from "@/assets/logo-steady.webp";
+import logoAsetra from "@/assets/logo-asetra.webp";
+import logoZ from "@/assets/logo-z.webp";
+import logoStino from "@/assets/logo-stino.webp";
+import logoEols from "@/assets/logo-eols.webp";
+import logoExobloc from "@/assets/logo-exobloc.webp";
+import logoMozze from "@/assets/logo-mozze.webp";
+import logoTabbyCity from "@/assets/logo-tabbycity.webp";
 
 const logos = [
   { name: "Basalt", src: logoBasalt },

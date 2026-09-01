@@ -1,4 +1,4 @@
-import logoInpoint from "@/assets/logo-inpoint.png";
+import logoInpoint from "@/assets/logo-inpoint.webp";
 
 const Footer = () => {
   return (

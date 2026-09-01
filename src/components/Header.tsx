@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoInpoint from "@/assets/logo-inpoint.png";
+import logoInpoint from "@/assets/logo-inpoint.webp";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
