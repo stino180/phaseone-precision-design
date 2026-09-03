@@ -100,13 +100,23 @@ const WorkSection = () => {
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden bg-background aspect-[4/3]">
-                {artwork[project.slug] && (
+                {artwork[project.slug] ? (
                   <img
                     src={artwork[project.slug]}
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
+                ) : (
+                  /* No screenshot yet — a set plate beats an empty frame. */
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-surface border border-border">
+                    <span className="text-2xl font-bold tracking-tight text-foreground">
+                      {project.name}
+                    </span>
+                    <span className="mt-2 text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                      {disciplineLabel[project.discipline]}
+                    </span>
+                  </div>
                 )}
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300" />
                 <span className="absolute top-3 left-3 px-2 py-1 bg-background/90 backdrop-blur-sm text-[10px] font-medium tracking-[0.15em] uppercase text-foreground">

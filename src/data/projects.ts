@@ -13,7 +13,8 @@ export interface Project {
   /** Stable identifier. Used to attach per-site artwork; don't rename casually. */
   slug: string;
   name: string;
-  url: string;
+  /** Omit while a project has no public link yet; cards render unlinked. */
+  url?: string;
   /** One line, no site-specific framing. Reads correctly on either site. */
   blurb: string;
   discipline: ProjectDiscipline;
@@ -78,6 +79,17 @@ export const projects: Project[] = [
     blurb: "CDL training platform with live classes, practice tests, and study guides.",
     discipline: "website",
     origin: "client",
+    status: "live",
+  },
+  {
+    slug: "savenly",
+    name: "Savenly",
+    // savenly.deals redirects here; .app is canonical
+    url: "https://savenly.app",
+    blurb:
+      "Chicago restaurant deals on a map — happy hours, daily specials, and BOGO offers near you.",
+    discipline: "app",
+    origin: "in-house",
     status: "live",
   },
 ];
