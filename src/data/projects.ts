@@ -34,16 +34,6 @@ export const projects: Project[] = [
     status: "live",
   },
   {
-    slug: "zmove",
-    name: "zMove",
-    url: "https://zmove.xyz",
-    blurb:
-      "Sports clip platform for posting highlights, livestreams, and grassroots moments.",
-    discipline: "website",
-    origin: "in-house",
-    status: "live",
-  },
-  {
     slug: "stacq",
     name: "Stacq",
     url: "https://stacq.xyz",
