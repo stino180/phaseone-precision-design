@@ -1,8 +1,8 @@
 const steps = [
-  { number: "01", title: "Discovery", description: "We listen. Understanding your goals, audience, and competitive landscape." },
-  { number: "02", title: "Strategy", description: "A clear roadmap with defined milestones, deliverables, and timelines." },
-  { number: "03", title: "Execution", description: "Pixel-perfect design and robust development, delivered iteratively." },
-  { number: "04", title: "Launch & Support", description: "Seamless deployment with ongoing optimization and maintenance." },
+  { number: "01", title: "Call", description: "15 minutes. Tell us about the show or event and your date." },
+  { number: "02", title: "Quote", description: "A fixed price and timeline within 24 hours." },
+  { number: "03", title: "Shoot & Build", description: "We film, edit, and build in parallel, so the site is ready when the video is." },
+  { number: "04", title: "Launch", description: "Final files cut for every platform, page live, tickets selling." },
 ];
 
 const ProcessSection = () => {

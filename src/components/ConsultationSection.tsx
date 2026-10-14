@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 const ConsultationSection = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", organization: "", event_date: "", need: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const ConsultationSection = () => {
       if (error) throw error;
 
       toast({ title: "Message sent!", description: "We'll get back to you soon." });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", organization: "", event_date: "", need: "", message: "" });
     } catch {
       toast({ title: "Something went wrong", description: "Please try again or email us directly.", variant: "destructive" });
     } finally {
@@ -37,10 +37,10 @@ const ConsultationSection = () => {
             Get In Touch
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground leading-tight text-balance text-center">
-            Ready to elevate your digital presence?
+            Got a show or event coming up?
           </h2>
           <p className="mt-6 text-primary-foreground/70 text-lg leading-relaxed max-w-lg mx-auto text-center">
-            Book a free discovery call to discuss your project. No obligations, just clarity.
+            Send the date and what you need. You'll get a quote within 24 hours.
           </p>
 
           <div className="mt-16 grid md:grid-cols-2 gap-12 md:gap-16">
@@ -104,6 +104,25 @@ const ConsultationSection = () => {
                 />
               </div>
               <div>
+                <label className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-2 block">Organization</label>
+                <input type="text" value={formData.organization} onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))} className="w-full bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground px-4 py-3 text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-primary-foreground/40 transition-colors" placeholder="Theater, nonprofit, festival..." />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-2 block">Event/Show date</label>
+                  <input type="text" value={formData.event_date} onChange={(e) => setFormData(prev => ({ ...prev, event_date: e.target.value }))} className="w-full bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground px-4 py-3 text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-primary-foreground/40 transition-colors" placeholder="e.g. March 14" />
+                </div>
+                <div>
+                  <label className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-2 block">What do you need?</label>
+                  <select value={formData.need} onChange={(e) => setFormData(prev => ({ ...prev, need: e.target.value }))} className="w-full bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground px-4 py-3 text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-primary-foreground/40 transition-colors">
+                    <option value="" className="text-foreground">Select one</option>
+                    {["Show Promo", "Film + Site", "Event Recap", "Something else"].map((o) => (
+                      <option key={o} value={o} className="text-foreground">{o}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              <div>
                 <label className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50 mb-2 block">Message</label>
                 <textarea
                   required
@@ -111,7 +130,7 @@ const ConsultationSection = () => {
                   value={formData.message}
                   onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   className="w-full bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground px-4 py-3 text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-primary-foreground/40 transition-colors resize-none"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about the show or event..."
                 />
               </div>
               <button

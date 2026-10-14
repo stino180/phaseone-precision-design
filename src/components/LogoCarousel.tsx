@@ -2,25 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import logoBasalt from "@/assets/logo-basalt.webp";
-import logoDefi from "@/assets/logo-defischoolhouse.webp";
 import logoSteady from "@/assets/logo-steady.webp";
 import logoAsetra from "@/assets/logo-asetra.webp";
 import logoZ from "@/assets/logo-z.webp";
 import logoStino from "@/assets/logo-stino.webp";
 import logoEols from "@/assets/logo-eols.webp";
-import logoExobloc from "@/assets/logo-exobloc.webp";
 import logoMozze from "@/assets/logo-mozze.webp";
 import logoTabbyCity from "@/assets/logo-tabbycity.webp";
 
 const logos = [
   { name: "Basalt", src: logoBasalt },
-  { name: "Defi Schoolhouse", src: logoDefi },
   { name: "Steady", src: logoSteady },
   { name: "Asetra", src: logoAsetra },
   { name: "Z", src: logoZ },
   { name: "Stino", src: logoStino },
   { name: "EOLS Inc.", src: logoEols },
-  { name: "Exobloc", src: logoExobloc },
   { name: "Mozze", src: logoMozze },
   { name: "Tabby City", src: logoTabbyCity },
 ];

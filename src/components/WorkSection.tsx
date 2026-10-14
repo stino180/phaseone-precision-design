@@ -24,6 +24,12 @@ const artwork: Record<string, string> = {
   stacq: workStacq,
 };
 
+/** Order and selection for this section. Other catalogue projects are hidden here. */
+const featured = ["eols", "savenly", "mozze"];
+const shown = featured
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter((p): p is (typeof projects)[number] => Boolean(p));
+
 const allFilters: { label: string; value: Filter }[] = [
   { label: "All", value: "all" },
   { label: "Websites", value: "website" },
@@ -33,7 +39,7 @@ const allFilters: { label: string; value: Filter }[] = [
 
 // Hide a discipline filter until there is at least one project in it.
 const filters = allFilters.filter(
-  (f) => f.value === "all" || projects.some((p) => p.discipline === f.value)
+  (f) => f.value === "all" || shown.some((p) => p.discipline === f.value)
 );
 
 const originLabel = {
@@ -51,8 +57,8 @@ const WorkSection = () => {
 
   const filtered =
     active === "all"
-      ? projects
-      : projects.filter((p) => p.discipline === active);
+      ? shown
+      : shown.filter((p) => p.discipline === active);
 
   return (
     <section id="work" className="py-24 md:py-32 bg-surface">
@@ -60,7 +66,7 @@ const WorkSection = () => {
         {/* Header */}
         <div className="mb-12 md:mb-16">
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-3">
-            Selected Work
+            Web &amp; App Work
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Portfolio

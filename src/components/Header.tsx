@@ -5,7 +5,7 @@ import logoInpoint from "@/assets/logo-inpoint.webp";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navItems = ["Services", "Process", "Consultation"];
+  const navItems = ["Reel", "Services", "Packages", "Consultation"];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
