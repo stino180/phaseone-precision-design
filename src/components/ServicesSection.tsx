@@ -1,30 +1,10 @@
 import { Globe, Smartphone, PenTool, Clapperboard } from "lucide-react";
 
 const services = [
-  {
-    icon: Globe,
-    title: "Web Design & Development",
-    description:
-      "Bespoke websites engineered for performance, accessibility, and visual impact. From corporate platforms to e-commerce experiences.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Applications",
-    description:
-      "Native and cross-platform apps built with precision. Seamless user experiences that perform flawlessly across every device.",
-  },
-  {
-    icon: PenTool,
-    title: "Brand & Graphic Design",
-    description:
-      "Logos, identity systems, and visual assets that communicate authority. Strategic design rooted in clarity and purpose.",
-  },
-  {
-    icon: Clapperboard,
-    title: "Video & Motion",
-    description:
-      "Brand spots, product films, and motion graphics. Launch your site and the film that sells it from one team.",
-  },
+  { icon: Clapperboard, title: "Video & Motion", description: "Show trailers, event recaps, promo spots, and donor videos, cut for every platform." },
+  { icon: Globe, title: "Websites & Event Pages", description: "Ticket and event landing pages, season sites, and full websites that load fast and convert." },
+  { icon: PenTool, title: "Brand & Graphic Design", description: "Show art, logos, and social assets that match your film and your site." },
+  { icon: Smartphone, title: "Apps & Custom Builds", description: "When you need more than a website: booking tools, member portals, custom apps." },
 ];
 
 const ServicesSection = () => {
@@ -46,6 +26,9 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-12 lg:gap-10">
           {services.map((service) => (
             <div key={service.title} className="group">
+              <span className="block text-sm font-medium text-muted-foreground mb-4">
+                {String(services.indexOf(service) + 1).padStart(2, "0")}
+              </span>
               <service.icon
                 size={28}
                 strokeWidth={1.2}
