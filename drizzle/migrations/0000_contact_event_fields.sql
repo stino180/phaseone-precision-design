@@ -1,0 +1,1 @@
+ALTER TABLE public.contact_submissions ADD COLUMN IF NOT EXISTS organization text, ADD COLUMN IF NOT EXISTS event_date text, ADD COLUMN IF NOT EXISTS need text;
