@@ -10,7 +10,7 @@ const Footer = () => {
               <img src={logoInpoint} alt="Inpoint Studio" className="h-20 w-auto" />
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
-              Digital consultancy for the detail-obsessed.
+              Film and web for Chicago's stages, galleries, and festivals.
             </p>
           </div>
           <div className="flex gap-8 text-sm text-muted-foreground">
